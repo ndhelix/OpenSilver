@@ -128,6 +128,7 @@
 		<Compile Include="Windows.UI.Xaml.Controls\AccordionSelectionMode.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\Common\Extensions.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\Common\TypeHelper.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\DataGridEditAction.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\DataGridHeadersVisibility.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\DataGridRowDetailsVisibilityMode.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ExpandDirection.cs" />
@@ -143,6 +144,7 @@
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\AccordionItem.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\AutoCompleteBox.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Automation\DataFormAutomationPeer.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\BusyIndicator.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\ButtonSpinner.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Calendar.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\CalendarBlackoutDatesCollection.cs" />
@@ -168,9 +170,14 @@
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataFormToStringConverter.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataFormValueConverter.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGrid.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridBeginningEditEventArgs.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridCellEditEndedEventArgs.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridCellEditEndingEventArgs.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridColumn.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridGridLinesVisibility.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridPreparingCellForEditEventArgs.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridRow.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DataGridTextColumn.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DatePicker.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DatePickerFormat.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Grid.cs" />
@@ -186,6 +193,8 @@
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\PathOrderPair.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Picker.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\PopupTimeSelectionMode.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\RichTextBlock.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\RichTextBlockOverflow.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Separator.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\SpinDirection.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\SpinEventArgs.cs" />
@@ -1199,6 +1208,11 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Runtime.licenseheader" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Page Include="DefaultStyles\INTERNAL_DefaultBusyIndicatorStyle.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
   
 	<!-- See ths comment on the first <Import> -->

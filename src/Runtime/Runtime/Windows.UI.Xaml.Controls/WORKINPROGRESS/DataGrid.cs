@@ -34,6 +34,26 @@ namespace Windows.UI.Xaml.Controls
         public event EventHandler<EventArgs> CurrentCellChanged;
 
         /// <summary>
+        ///     Called just before a cell will change to edit mode
+        ///     to allow handlers to prevent the cell from entering edit mode.
+        /// </summary>
+        public event EventHandler<DataGridBeginningEditEventArgs> BeginningEdit;
+
+        /// <summary>
+        ///     Raised just before cell editing is ended.
+        ///     Gives handlers the opportunity to cancel the operation.
+        /// </summary>
+        public event EventHandler<DataGridCellEditEndingEventArgs> CellEditEnding;
+
+        /// <summary>
+        ///     Called after a cell has changed to editing mode to allow
+        ///     handlers to modify the contents of the cell.
+        /// </summary>
+        public event EventHandler<DataGridPreparingCellForEditEventArgs> PreparingCellForEdit;
+
+        public event EventHandler<DataGridCellEditEndedEventArgs> CellEditEnded;
+
+        /// <summary>
         /// Gets or sets the column that contains the current cell.
         /// </summary>
         /// <returns>
@@ -373,6 +393,42 @@ namespace Windows.UI.Xaml.Controls
           DependencyPropertyChangedEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///     The default height of a row.
+        /// </summary>
+        public double RowHeight
+        {
+            get { return (double)GetValue(RowHeightProperty); }
+            set { SetValue(RowHeightProperty, value); }
+        }
+
+        /// <summary>
+        ///     The DependencyProperty for RowHeight.
+        /// </summary>
+        public static readonly DependencyProperty RowHeightProperty = DependencyProperty.Register(nameof(RowHeight), typeof(double), typeof(DataGrid), new PropertyMetadata(double.NaN, new PropertyChangedCallback(DataGrid.OnNotifyCellsPresenterPropertyChanged)));
+
+        /// <summary>
+        ///     The default minimum height of a row.
+        /// </summary>
+        public double MinRowHeight
+        {
+            get { return (double)GetValue(MinRowHeightProperty); }
+            set { SetValue(MinRowHeightProperty, value); }
+        }
+
+        /// <summary>
+        ///     The DependencyProperty for MinRowHeight.
+        /// </summary>
+        public static readonly DependencyProperty MinRowHeightProperty = DependencyProperty.Register(nameof(MinRowHeight), typeof(double), typeof(DataGrid), new PropertyMetadata(0.0, new PropertyChangedCallback(DataGrid.OnNotifyCellsPresenterPropertyChanged)));
+
+        /// <summary>
+        ///     Notifies each CellsPresenter about property changes.
+        /// </summary>
+        private static void OnNotifyCellsPresenterPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            //((DataGrid)d).NotifyPropertyChanged(d, e, DataGridNotificationTarget.CellsPresenter);
         }
 
         /// <summary>
