@@ -1,4 +1,5 @@
 ﻿
+
 /*===================================================================================
 * 
 *   Copyright (c) Userware/OpenSilver.net
@@ -11,22 +12,15 @@
 *  
 \*====================================================================================*/
 
-namespace System.Windows.Markup
-{
-    /// <summary>
-    /// Represents a service that reports situational object-property relationships
-    /// for markup extension evaluation.
-    /// </summary>
-    public interface IProvideValueTarget
-    {
-        /// <summary>
-        /// Gets the target object being reported.
-        /// </summary>
-        object TargetObject { get; }
 
-        /// <summary>
-        /// Gets an identifier for the target property being reported.
-        /// </summary>
-        object TargetProperty { get; }
+#if WORKINPROGRESS
+
+
+namespace System.Net
+{
+    public partial class CookieContainer
+    {
     }
 }
+
+#endif

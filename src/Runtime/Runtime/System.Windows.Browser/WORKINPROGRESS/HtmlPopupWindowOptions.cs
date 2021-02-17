@@ -11,22 +11,15 @@
 *  
 \*====================================================================================*/
 
-namespace System.Windows.Markup
-{
-    /// <summary>
-    /// Represents a service that reports situational object-property relationships
-    /// for markup extension evaluation.
-    /// </summary>
-    public interface IProvideValueTarget
-    {
-        /// <summary>
-        /// Gets the target object being reported.
-        /// </summary>
-        object TargetObject { get; }
+#if WORKINPROGRESS
 
-        /// <summary>
-        /// Gets an identifier for the target property being reported.
-        /// </summary>
-        object TargetProperty { get; }
+namespace System.Windows.Browser
+{
+    public sealed class HtmlPopupWindowOptions
+    {
+        public bool Menubar { get; set; }
+        public bool Status { get; set; }
     }
 }
+
+#endif
